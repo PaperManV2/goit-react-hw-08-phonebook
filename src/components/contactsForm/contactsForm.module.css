@@ -1,0 +1,26 @@
+.name {
+  width: 250px;
+  height: 30px;
+  font-size: 25px;
+}
+
+.phone {
+  width: 250px;
+  height: 30px;
+  font-size: 25px;
+}
+
+.contactForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.submit {
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}

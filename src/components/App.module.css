@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.app {
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 30px;
+  color: #010101;
+  background: rgb(172, 172, 172);
+  padding-top: 150px;
+}
