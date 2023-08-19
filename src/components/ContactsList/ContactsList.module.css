@@ -1,11 +1,28 @@
 .contact {
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .delete {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.info {
+  display: flex;
+  gap: 30px;
 }
 
 .name {
+  width: 300px;
+  font-weight: bold;
 }
 
 .phone {
+  margin-right: 15px;
 }
