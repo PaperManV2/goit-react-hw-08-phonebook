@@ -1,5 +1,4 @@
 import css from './Register.module.css';
-import { Link } from 'react-router-dom';
 
 const CheckDataBaseHandler = () => {};
 
