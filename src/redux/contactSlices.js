@@ -4,7 +4,6 @@ const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
     items: [],
-    accountId: '',
   },
 
   reducers: {
@@ -38,12 +37,9 @@ const contactsSlice = createSlice({
     fetchContacts(state, action) {
       state.items = action.payload;
     },
-    setAccountId(state, action) {
-      state.accountId = action.payload;
-    },
   },
 });
 
-export const { addContact, deleteContact, fetchContacts, setAccountId } =
+export const { addContact, deleteContact, fetchContacts } =
   contactsSlice.actions;
 export const contactReducer = contactsSlice.reducer;

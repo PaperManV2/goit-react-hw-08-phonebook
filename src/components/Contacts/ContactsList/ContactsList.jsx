@@ -1,24 +1,26 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from '../../redux/contactSlices';
+import { deleteContact } from '../../../redux/contactSlices';
 import css from './ContactsList.module.css';
-import { fetchItems } from '../../redux/operation';
+import { fetchItems } from '../../../redux/operation';
 import axios from 'axios';
 
-const ContactsList = () => {
+export const ContactsList = () => {
   const dispatch = useDispatch();
+
+  const contacts = useSelector(state => state.contacts['items']);
+  const accountId = localStorage.getItem('accountId');
 
   const handleDelete = id => {
     dispatch(deleteContact(id));
-    console.log(id);
-    axios.delete(`https://64d8c6245f9bf5b879ce8b5a.mockapi.io/contacts/${id}`);
+    axios.delete(
+      `https://64d8c6245f9bf5b879ce8b5a.mockapi.io/accounts/${accountId}/contacts/${id}`
+    );
   };
 
   useEffect(() => {
-    dispatch(fetchItems());
-  }, [dispatch]);
-
-  const contacts = useSelector(state => state.contacts['items']);
+    dispatch(fetchItems(accountId));
+  }, [dispatch, accountId]);
 
   return (
     <ul>
@@ -41,5 +43,3 @@ const ContactsList = () => {
     </ul>
   );
 };
-
-export default ContactsList;
