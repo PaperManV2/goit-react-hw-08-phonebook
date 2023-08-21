@@ -24,3 +24,11 @@
   font-size: 20px;
   font-weight: bold;
 }
+
+.search {
+  width: 250px;
+  height: 30px;
+  font-size: 25px;
+  border-radius: 5px;
+  border: 1px solid black;
+}

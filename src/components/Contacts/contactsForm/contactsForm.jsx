@@ -50,7 +50,7 @@ export const ContactForm = () => {
         className={css.phone}
         pattern="^\+?\d{1,4}?\s?\(?\d{1,4}?\)?\s?\d{1,4}\s?\d{1,4}\s?\d{1,9}$"
       ></input>
-      <input type="submit" value="Add" className={css.submit}></input>
+      <input type="submit" value="Add" className={css.submit} />
     </form>
   );
 };
