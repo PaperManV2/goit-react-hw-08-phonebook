@@ -7,13 +7,19 @@ import { Contacts } from './Contacts/Contacts';
 export const App = () => {
   return (
     <Routes>
-      <Route path="/phoneBook-7/" element={<Home />}></Route>
+      <Route path="/goit-react-hw-08-phonebook/" element={<Home />}></Route>
       <Route
-        path="/phoneBook-7/:accountId/contacts"
+        path="/goit-react-hw-08-phonebook/:accountId/contacts"
         element={<Contacts />}
       ></Route>
-      <Route path="/phoneBook-7/register" element={<Register />}></Route>
-      <Route path="/phoneBook-7/login" element={<Login />}></Route>
+      <Route
+        path="/goit-react-hw-08-phonebook/register"
+        element={<Register />}
+      ></Route>
+      <Route
+        path="/goit-react-hw-08-phonebook/login"
+        element={<Login />}
+      ></Route>
     </Routes>
   );
 };

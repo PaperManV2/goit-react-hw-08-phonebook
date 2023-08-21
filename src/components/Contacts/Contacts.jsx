@@ -6,7 +6,7 @@ let login = localStorage.getItem('accountId');
 
 const handleLogout = () => {
   localStorage.removeItem('accountId');
-  window.location.replace('/phoneBook-7/');
+  window.location.replace('/goit-react-hw-08-phonebook/');
 };
 export const Contacts = () => {
   return (

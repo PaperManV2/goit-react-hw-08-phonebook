@@ -74,7 +74,9 @@ const Login = () => {
                 console.log(data);
 
                 if (data) {
-                  window.location.replace(`/phoneBook-7/${data}/contacts`);
+                  window.location.replace(
+                    `/goit-react-hw-08-phonebook/${data}/contacts`
+                  );
                 } else {
                   console.log('Data not available or condition not met.');
                 }

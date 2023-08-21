@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   let login = localStorage.getItem('accountId');
-  let userUI = `/phoneBook-7${login}/contacts`;
+  let userUI = `/goit-react-hw-08-phonebook${login}/contacts`;
 
   return (
     <section className={css.container}>
@@ -14,13 +14,13 @@ const Home = () => {
             {login ? (
               <Link to={userUI}>Contacts</Link>
             ) : (
-              <Link to="/phoneBook-7/login">Contacts</Link>
+              <Link to="/goit-react-hw-08-phonebook/login">Contacts</Link>
             )}
           </button>
         </li>
         <li className={css.listItem}>
           <button>
-            <Link to="/phoneBook-7/register">Register</Link>
+            <Link to="/goit-react-hw-08-phonebook/register">Register</Link>
           </button>
         </li>
         <li className={css.listItem}>
@@ -28,7 +28,7 @@ const Home = () => {
             {login ? (
               <Link to={userUI}>Login</Link>
             ) : (
-              <Link to="/phoneBook-7/login">Login</Link>
+              <Link to="/goit-react-hw-08-phonebook/login">Login</Link>
             )}
           </button>
         </li>

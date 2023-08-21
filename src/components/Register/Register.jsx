@@ -76,7 +76,9 @@ const Register = () => {
                   }
                 );
                 localStorage.setItem('accountId', data.id);
-                window.location.replace(`/phoneBook-7/${data.id}/contacts`);
+                window.location.replace(
+                  `/goit-react-hw-08-phonebook/${data.id}/contacts`
+                );
               } else {
                 console.log('Data not available or condition not met.');
               }
