@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   let login = localStorage.getItem('accountId');
-  let userUI = `/goit-react-hw-08-phonebook${login}/contacts`;
+  let userUI = `/goit-react-hw-08-phonebook/${login}/contacts`;
 
   return (
     <section className={css.container}>

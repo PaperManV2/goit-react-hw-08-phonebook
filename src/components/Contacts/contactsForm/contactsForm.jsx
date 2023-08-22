@@ -1,30 +1,48 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../../redux/contactSlices';
 import css from './contactsForm.module.css';
 import axios from 'axios';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-
+  
   const accountId = localStorage.getItem('accountId');
+
+  const contacts = useSelector(state => state.contacts['items']);
 
   const [contact, setContact] = useState({
     name: '',
     phone: '',
   });
 
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    dispatch(addContact(contact.name, contact.phone));
-    axios.post(
-      `https://64d8c6245f9bf5b879ce8b5a.mockapi.io/accounts/${accountId}/contacts`,
-      {
-        phone: contact.phone,
-        name: contact.name,
+  const checkIfExist = () => {
+    for( let item of contacts) {
+      if(item.phone === contact.phone) {
+        return true;
       }
-    );
+    }
+    return false;
+  }
+
+  
+  const handleSubmit = async e => {
+    e.preventDefault();
+    if(!checkIfExist()) {
+      dispatch(addContact(contact.name, contact.phone));
+      const response = await axios.post(
+        `https://64d8c6245f9bf5b879ce8b5a.mockapi.io/accounts/${accountId}/contacts`,
+        {
+          phone: contact.phone,
+          name: contact.name,
+        }
+      );
+      if(response.status === 200 ||response.status === 201) {
+        window.location.replace(window.location.href)
+      }
+    } else {
+      console.log("The phone number is already saved in Data Base")
+    }
   };
 
   const handleInputsChange = e => {
